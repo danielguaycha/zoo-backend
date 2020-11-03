@@ -56,6 +56,10 @@ class AnimalsController extends ApiController
             'science_name' => 'nullable|string|max:50',
             'description' => 'required|string|max:200',
             'img' => 'required|image|mimes:jpeg,png,jpg'
+        ], [
+            'img.required' => 'Seleccione una imagen',
+            'img.image' => 'El archivo debe ser una imagen',
+            'description.max' => 'Se permite una descripción solo de 200 caracteres'
         ]);
 
         $animal = new Animal();
@@ -82,6 +86,10 @@ class AnimalsController extends ApiController
             'name' => 'required|string|max:100|min:2',
             'science_name' => 'nullable|string|max:50',
             'description' => 'required|string|max:200',
+        ], [
+            'img.required' => 'Seleccione una imagen',
+            'img.image' => 'El archivo debe ser una imagen',
+            'description.max' => 'Se permite una descripción solo de 200 caracteres'
         ]);
 
         $animal = Animal::FindOrFail($id)->update([

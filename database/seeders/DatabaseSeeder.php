@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin'),
         ]);
 
-        Animal::factory(20)->create();
+        //Animal::factory(20)->create();
     }
 }
